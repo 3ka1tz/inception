@@ -12,6 +12,12 @@ build:
 logs:
 	docker compose -f $(COMPOSE) logs -f
 
-re: down up
+clean:
+	docker compose -f $(COMPOSE) down --rmi local
 
-.PHONY: up down build logs re
+fclean:
+	docker compose -f $(COMPOSE) down --volumes --rmi all
+
+re: fclean up
+
+.PHONY: up down build logs clean fclean re

@@ -9,6 +9,8 @@ services:
       - mariadb_data:/var/lib/mysql
     networks:
       - inception
+    env_file:
+      - .env
 
   wordpress:
     build:
@@ -19,6 +21,12 @@ services:
       - wordpress_data:/var/www/wordpress
     networks:
       - inception
+    env_file:
+      - .env
+    environment:
+      - WORDPRESS_DB_NAME=wordpress
+    depends_on:
+      - mariadb
 
   nginx:
     build:
@@ -31,6 +39,8 @@ services:
       - wordpress_data:/var/www/wordpress:ro
     networks:
       - inception
+    env_file:
+      - .env
 
 volumes:
   mariadb_data:
