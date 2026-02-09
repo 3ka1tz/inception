@@ -6,28 +6,38 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     mariadb-install-db --user=mysql --ldata=/var/lib/mysql
 fi
 
-mysqld_safe --skip-networking &
+# Start MariaDB in the background
+mysqld_safe &
 echo "Waiting for MariaDB to start..."
 
+# Wait until MariaDB is ready
 until mysqladmin ping --silent; do
     sleep 1
 done
 
-if [ ! -f "/var/lib/mysql/.db_initialized" ]; then
-    echo "Running initial database setup..."
+echo "MariaDB started."
 
-    cat << EOF > /tmp/init.sql
+echo "Running initial database setup..."
+
+# Create DB and user
+mariadb -u root <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
+FLUSH PRIVILEGES;
+
 CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\`;
 CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
 GRANT ALL PRIVILEGES ON \`$MYSQL_DATABASE\`.* TO '$MYSQL_USER'@'%';
 FLUSH PRIVILEGES;
-ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
 EOF
 
-    mysql < /tmp/init.sql
-    touch /var/lib/mysql/.db_initialized
-fi
+# Debug output
+mariadb -u root -e "SELECT user, host, plugin FROM mysql.user;"
 
+
+echo "Initial database setup completed."
+
+# Shutdown MariaDB cleanly so it can restart in foreground
 mysqladmin -u root --password="$MYSQL_ROOT_PASSWORD" shutdown
 
+# Start MariaDB normally
 exec mysqld

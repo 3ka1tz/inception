@@ -1,14 +1,12 @@
 #!/bin/bash
 set -e
 
-WP_PATH="/var/www/wordpress"
-cd "$WP_PATH"
+cd "/var/www/wordpress"
 
 echo "Starting WordPress entrypoint..."
 
 echo "Waiting for MariaDB to be ready..."
-
-until mysqladmin ping -h"$WORDPRESS_DB_HOST" --silent; do
+until mysqladmin ping -h "$WORDPRESS_DB_HOST" --silent; do
     echo "MariaDB is unavailable - sleeping"
     sleep 2
 done
@@ -20,15 +18,13 @@ if [ ! -f wp-load.php ]; then
     wp core download --allow-root
 fi
 
-if [ -f ./wp-config.php ]; then
-    echo "WordPress already exists. Skipping installation."
-else
+if [ ! -f ./wp-config.php ]; then
     echo "Installing WordPress..."
 
     wp config create --allow-root \
         --dbname="${WORDPRESS_DB_NAME}" \
         --dbuser="${WORDPRESS_DB_USER}" \
-        --dbpass="${WORDPRESS_DB_PASS}" \
+        --dbpass="${WORDPRESS_DB_PASSWORD}" \
         --dbhost="${WORDPRESS_DB_HOST}" \
         --skip-check \
         --force
@@ -37,10 +33,12 @@ else
         --url="${WORDPRESS_URL}" \
         --title="${WORDPRESS_TITLE}" \
         --admin_user="${WORDPRESS_ADMIN_USER}" \
-        --admin_pass="${WORDPRESS_ADMIN_PASS}" \
+        --admin_pass="${WORDPRESS_ADMIN_PASSWORD}" \
         --admin_email="${WORDPRESS_ADMIN_EMAIL}"
     
     echo "WordPress installation completed."
+else
+    echo "WordPress already exists. Skipping installation."
 fi
 
 wp core update-db --allow-root
