@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -e
 
 CRT=/etc/ssl/certs/nginx.crt
 KEY=/etc/ssl/private/nginx.key

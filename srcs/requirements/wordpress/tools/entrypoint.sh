@@ -6,11 +6,10 @@ cd "/var/www/wordpress"
 echo "Starting WordPress entrypoint..."
 
 echo "Waiting for MariaDB to be ready..."
-until mysqladmin ping -h "$WORDPRESS_DB_HOST" --silent; do
+until mysqladmin ping -h"$WORDPRESS_DB_HOST" -u"$WORDPRESS_DB_USER" -p"$WORDPRESS_DB_PASSWORD" --silent; do
     echo "MariaDB is unavailable - sleeping"
     sleep 2
 done
-
 echo "MariaDB is up!"
 
 if [ ! -f wp-load.php ]; then
