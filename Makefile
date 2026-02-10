@@ -18,6 +18,10 @@ clean:
 fclean:
 	docker compose -f $(COMPOSE) down --volumes --rmi all
 
-re: fclean up
+reset-data:
+	sudo rm -rf /home/elopez-u/data/wordpress/*
+	sudo rm -rf /home/elopez-u/data/mariadb/*
+
+re: fclean reset-data up
 
 .PHONY: up down build logs clean fclean re
