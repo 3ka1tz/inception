@@ -22,7 +22,7 @@ Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr i
 ## Resources
 https://aws.amazon.com/compare/the-difference-between-docker-vm/
 
-https://docs.docker.com
+https://docs.docker.com  
 https://docs.docker.com/build/building/best-practices/
 
 AI helped me understand Docker logs, find version compatibility issues, correct typos, and identify default naming conventions.
