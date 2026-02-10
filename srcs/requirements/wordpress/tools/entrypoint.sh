@@ -34,6 +34,13 @@ if [ ! -f ./wp-config.php ]; then
         --admin_user="${WORDPRESS_ADMIN_USER}" \
         --admin_password="${WORDPRESS_ADMIN_PASSWORD}" \
         --admin_email="${WORDPRESS_ADMIN_EMAIL}"
+
+    echo "Creating second WordPress user..."
+
+    wp user create "${WORDPRESS_USER}" "${WORDPRESS_USER_EMAIL}" \
+        --role=subscriber \
+        --user_pass="${WORDPRESS_USER_PASSWORD}" \
+        --allow-root
     
     echo "WordPress installation completed."
 else

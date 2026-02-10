@@ -5,57 +5,48 @@ services:
       context: ./requirements/mariadb
       dockerfile: Dockerfile
     restart: on-failure
+    env_file:
+      - .env
     volumes:
       - mariadb_data:/var/lib/mysql
     networks:
       - inception
-    env_file:
-      - .env
 
   wordpress:
+    container_name: wordpress
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
-    container_name: wordpress
+    restart: on-failure
+    env_file:
+      - .env
     volumes:
       - wordpress_data:/var/www/wordpress
     networks:
       - inception
-    env_file:
-      - .env
-    environment:
-      - WORDPRESS_DB_NAME=wordpress
     depends_on:
       - mariadb
 
   nginx:
+    container_name: nginx
     build:
       context: ./requirements/nginx
       dockerfile: Dockerfile
-    container_name: nginx
-    ports:
-      - "443:443"
-    volumes:
-      - wordpress_data:/var/www/wordpress:ro
-    networks:
-      - inception
+    restart: on-failure
     env_file:
       - .env
+    volumes:
+      - wordpress_data:/var/www/wordpress:ro
+    ports:
+      - "443:443"
+    networks:
+      - inception
 
 volumes:
   mariadb_data:
     driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/elopez-u/data/mariadb
-
   wordpress_data:
     driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/elopez-u/data/wordpress
 
 networks:
   inception:
