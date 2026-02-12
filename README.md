@@ -31,7 +31,7 @@ To start running my Inception project’s Docker containers, simply run `make up
 
 You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
 
-Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress example site.
+Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress sample page.
 
 ## Resources
 https://docs.docker.com  
