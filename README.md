@@ -29,15 +29,16 @@ Bind Mounts are fairly straightforward, it is a way to mount a directory from th
 ## Instructions
 To start running my Inception project’s Docker containers, simply run `make up` from the project’s root directory, where the Makefile is located.
 
-You can also run `make re` in case any unwanted temporary files were generated.
+You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
 
-Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice.
+Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress example site.
 
 ## Resources
-https://docs.docker.com
+https://docs.docker.com  
+https://docs.docker.com/build/building/best-practices  
 https://aws.amazon.com/compare/the-difference-between-docker-vm  
 https://semaphore.io/blog/docker-secrets-management  
 https://www.geeksforgeeks.org/devops/basics-of-docker-networking  
 https://www.portainer.io/blog/persistent-storage-docker-bind-mounts-and-named-volumes
 
-AI helped me understand Docker logs, find version compatibility issues, correct typos, and identify default naming conventions.
+While developing this project, I also used AI. It helped me correct typos, identify default naming conventions, solve version compatibility issues, and especially understand Docker logs.
