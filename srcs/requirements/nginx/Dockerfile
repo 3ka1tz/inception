@@ -11,4 +11,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
