@@ -22,6 +22,6 @@ reset-data:
 	sudo rm -rf /home/elopez-u/data/wordpress/*
 	sudo rm -rf /home/elopez-u/data/mariadb/*
 
-re: fclean reset-data up
+re: down up
 
 .PHONY: up down build logs clean fclean re
