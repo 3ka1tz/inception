@@ -14,13 +14,13 @@ RUN mkdir -p /var/www && \
     chown -R www-data:www-data /var/www/wordpress && \
     rm /tmp/wordpress.tar.gz
 
+EXPOSE 9000
+
 COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
 COPY tools/entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
-
-EXPOSE 9000
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 CMD ["php-fpm8.2", "-F"]

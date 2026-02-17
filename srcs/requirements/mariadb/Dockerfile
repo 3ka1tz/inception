@@ -7,11 +7,11 @@ RUN apt-get update && \
 RUN mkdir -p /var/lib/mysql && \
     chown -R mysql:mysql /var/lib/mysql
 
+EXPOSE 3306
+
 COPY conf/my.cnf /etc/mysql/my.cnf
 
 COPY tools/entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-EXPOSE 3306
-
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
