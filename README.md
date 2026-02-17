@@ -1,7 +1,9 @@
 # Inception
+
 This project has beeen created as part of the 42 curriculum by elopez-u.
 
 ## Description
+
 - **Virtual Machines vs Docker**
 
 Virtual Machines, also known as VMs, are an emulation of a physical machine (including virtualized hardware) running an operating system.
@@ -27,6 +29,7 @@ Docker Volumes are Docker's answer to managed persistent storage. When you creat
 Bind Mounts are fairly straightforward, it is a way to mount a directory from the host machine into your container. You simply define the directory on your host system and the path where you'd like it to appear within your container's filesystem.
 
 ## Instructions
+
 To start running my Inception project’s Docker containers, simply run `make up` from the project’s root directory, where the Makefile is located.
 
 You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
@@ -34,6 +37,7 @@ You can also run `make re` in case any error occurs during container generation,
 Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress sample page.
 
 ## Resources
+
 https://docs.docker.com  
 https://docs.docker.com/build/building/best-practices  
 https://aws.amazon.com/compare/the-difference-between-docker-vm  
