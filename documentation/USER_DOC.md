@@ -4,14 +4,11 @@ This project has been created as part of the 42 curriculum by elopez-u.
 
 ## Provided Services
 
-**MariaDB**
-MariaDB Server is one of the most popular open source relational databases. It's made by the original developers of MySQL and guaranteed to stay open source. It is part of most cloud offerings and the default in most Linux distributions. In my case, I will be using MariaDB as the database service for WordPress. For more information about this service, visit: https://mariadb.org.
+**MariaDB** is one of the most popular open source relational databases. It's made by the original developers of MySQL and guaranteed to stay open source. It is part of most cloud offerings and the default in most Linux distributions. In my case, I will be using MariaDB as the database service for WordPress. For more information about this service, visit: https://mariadb.org.
 
-**WordPress**
-WordPress is a open source publishing platform of choice for millions of websites worldwide, from creators and small businesses to enterprises. In my case, I will be using WordPress service to provide a index sample page to localhost. For more information about this service, visit: https://wordpress.org.
+**WordPress** is a open source publishing platform of choice for millions of websites worldwide, from creators and small businesses to enterprises. In my case, I will be using WordPress service to provide a index sample page to localhost. For more information about this service, visit: https://wordpress.org.
 
-**NGINX**
-NGINX is an HTTP web server, reverse proxy, content cache, load balancer, TCP/UDP server, and mail proxy server. In my case, I will be using NGINX service as the only entrypoint into my infrastructure via the port 443 only, and using just the TLSv1.2 or TLSv1.3 protocols. For more information about this service, visit: https://nginx.org.
+**NGINX** is an HTTP web server, reverse proxy, content cache, load balancer, TCP/UDP server, and mail proxy server. In my case, I will be using NGINX service as the only entrypoint into my infrastructure via the port 443 only, and using just the TLSv1.2 or TLSv1.3 protocols. For more information about this service, visit: https://nginx.org.
 
 ## Start and Stop the Project
 
