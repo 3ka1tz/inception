@@ -16,7 +16,7 @@ To start the project, clone this full repository into a Linux or macOS virtual m
 
 You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
 
-To stop it, run `make down` to stop the containers or `make fclean` to remove them.
+To stop it, run `make down` to stop the containers or `make fclean` if you also want to remove volumes.
 
 ## Access the Website and the Administration Panel
 
