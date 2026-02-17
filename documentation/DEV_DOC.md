@@ -14,7 +14,16 @@ To access the WordPress Administration Panel, you just need to add /wp-admin to 
 
 ## Relevant Commands
 
+`docker exec -it <service-name> bash` lets you enter the container as if you were SSH-ing into it. For example:
 
+```
+docker exec -it srcs-mariadb-1 bash
+mysql -u root -p
+
+SHOW DATABASES;
+USE wordpress;
+SHOW TABLES;
+```
 
 ## Project Data Location
 
