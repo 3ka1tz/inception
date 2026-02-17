@@ -23,9 +23,9 @@ To stop it, run `make down` to stop the containers or `make fclean` to remove th
 
 ## Access the Website and the Administration Panel
 
-Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress sample page.
+Once the Docker containers are up, open [127.0.0.1](https://127.0.0.1), [localhost](https://localhost) or [elopez-u.42.fr](https://elopez-u.42.fr) in the web browser of your choice and you will access the WordPress sample page.
 
-To access the WordPress Administration Panel, you just need to add /wp-admin to the previous mentioned URLs, for example, you can use "localhost/wp-admin".
+To access the WordPress Administration Panel, you just need to add /wp-admin to the previous mentioned URLs, for example, you can use [localhost/wp-admin](https://localhost/wp-admin).
 
 ## Locate and Manage Credentials
 
