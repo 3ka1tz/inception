@@ -19,8 +19,6 @@ To start the project, clone this full repository into a Linux or macOS virtual m
 
 You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
 
-
-
 To stop it, run `make down` to stop the containers or `make fclean` to remove them.
 
 ## Access the Website and the Administration Panel
@@ -29,13 +27,12 @@ Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr i
 
 To access the WordPress Administration Panel, you just need to add /wp-admin to the previous mentioned URLs, for example, you can use "localhost/wp-admin".
 
-## How to Locate and Manage Credentials
+## Locate and Manage Credentials
 
 Credentials are stored as environment variables in a hidden .env file. As they are environment variables, just modifying their values in the .env file, will change them in all the services they are used.
 
-## How to Check that the Services are Running Correctly
+## Check that the Services are Running correctly
 
 The `docker ps` command only shows running containers by default. To see all containers, use the -all (or -a) flag.
 
 The `docker logs` command batch-retrieves logs present at the time of execution.
-
