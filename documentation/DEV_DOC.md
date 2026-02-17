@@ -2,7 +2,7 @@
 
 This project has been created as part of the 42 curriculum by elopez-u.
 
-## Build and Launch the project from scratch
+## Build and Launch the Project from scratch
 
 To set up the environment, clone this full repository into a Linux or macOS virtual machine and run `make up` from the project's root directory, where the Makefile is located.
 
@@ -16,6 +16,6 @@ To access the WordPress Administration Panel, you just need to add /wp-admin to 
 
 
 
-## Where the Project Data is Stored
+## Project Data Location
 
 
