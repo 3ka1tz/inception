@@ -36,6 +36,8 @@ You can also run `make re` in case any error occurs during container generation,
 
 Once the Docker containers are up, open [127.0.0.1](https://127.0.0.1), [localhost](https://localhost) or [elopez-u.42.fr](https://elopez-u.42.fr) in the web browser of your choice and you will access the WordPress sample page.
 
+To access the WordPress Administration Panel, you just need to add /wp-admin to the previous mentioned URLs, for example, you can use [localhost/wp-admin](https://localhost/wp-admin).
+
 ## Resources
 
 https://docs.docker.com  
