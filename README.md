@@ -2,6 +2,8 @@
 
 This project has beeen created as part of the 42 curriculum by elopez-u.
 
+Broaden your system administration skills by working with Docker. In this project, you'll set up a complete infrastructure using Docker Compose, creating and managing multiple containerized services including NGINX with SSL/TLS, WordPress with php-fpm, and MariaDB. You'll gain hands-on experience with containerization, networking, volume management, and secure web service deployment within your own personal virtual machine.
+
 ## Description
 
 - **Virtual Machines vs Docker**
