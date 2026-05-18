@@ -1,8 +1,6 @@
 # Inception
 
-This project has beeen created as part of the 42 curriculum by elopez-u.
-
-Broaden your system administration skills by working with Docker. In this project, you'll set up a complete infrastructure using Docker Compose, creating and managing multiple containerized services including NGINX with SSL/TLS, WordPress with php-fpm, and MariaDB. You'll gain hands-on experience with containerization, networking, volume management, and secure web service deployment within your own personal virtual machine.
+*This project has beeen created as part of the 42 curriculum by elopez-u.*
 
 ## Description
 
@@ -36,9 +34,7 @@ To start running my Inception project’s Docker containers, simply run `make up
 
 You can also run `make re` in case any error occurs during container generation, or in case you want to rebuild them.
 
-Once the Docker containers are up, open [127.0.0.1](https://127.0.0.1), [localhost](https://localhost) or [elopez-u.42.fr](https://elopez-u.42.fr) in the web browser of your choice and you will access the WordPress sample page.
-
-To access the WordPress Administration Panel, you just need to add /wp-admin to the previous mentioned URLs, for example, you can use [localhost/wp-admin](https://localhost/wp-admin).
+Once the Docker containers are up, open 127.0.0.1, localhost or elopez-u.42.fr in the web browser of your choice and you will access the WordPress sample page.
 
 ## Resources
 
